@@ -6,7 +6,7 @@ public class OneTest {
 
 
     @Test
-    public void testsOne() {
+    public void SearchFirstLaptopFromListOnMarketPageForChooseBrands() {
         HomePage.openHomePage(HomePage.BASE_URL);
         HomePage.choiceMarket();
         MarketPage.choiceComputer();
@@ -15,7 +15,7 @@ public class OneTest {
         MarketPage.chooseLenovo();
         MarketPage.chooseHP();
         MarketPage.chooseView(MarketPage.NUMBER_ELEMENTS);
-        MarketPage.saveNameAndPriceFirstProductOnPage();
+        MarketPage.searchAndCheckPriceFirstProductOnPage();
     }
 
     @Test

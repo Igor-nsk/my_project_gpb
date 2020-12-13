@@ -65,8 +65,8 @@ public class MarketPage {
         return $$(By.xpath("//span[@data-autotest-currency='₽']/span"));
     }
 
-    String firstProductOnPage = listDisplayProducts().get(0).getText();
-    String firstProductPriceOnPage = priceDisplayProducts().get(0).getText();
+    //public String firstProductOnPage = listDisplayProducts().get(0).getText();
+    //public String firstProductPriceOnPage = priceDisplayProducts().get(0).getText();
 
 
     //  public static ElementsCollection priceDisplayProducts_nonspan() {
@@ -90,7 +90,7 @@ public class MarketPage {
     }
 
     public static SelenideElement searchProductButton() {
-        return $(cssSelector(".GVhpzCqwVU"));
+        return $(By.xpath("//button[@type='submit']"));
     }
 
     public static void choiceComputer() {
@@ -137,22 +137,9 @@ public class MarketPage {
         assertEquals(NUMBER_ELEMENTS, countElementsOnPage);
     }
 
-    public static void saveNameAndPriceFirstProductOnPage() {
-        // String firstProductOnPage = listDisplayProducts().get(0).innerText();
-        //String firstProductOnPage = listDisplayProducts().get(0).getText();
-        // String firstProductPriceOnPage = priceDisplayProducts().get(0).getText();
-        //System.out.println(firstProductOnPage);
-        //System.out.println(firstProductOnPage);
-        //String firstProductPriceOnPage_inner = priceDisplayProducts().get(0).innerText();
-        // String firstProductPriceOnPage_span = priceDisplayProducts_nonspan().get(0).getText();
-        //String firstProductPriceOnPage_span_inner = priceDisplayProducts_nonspan().get(0).innerText();
-        //System.out.println(firstProductPriceOnPage);
-        //System.out.println(firstProductPriceOnPage_span_inner);
-        //System.out.println(firstProductPriceOnPage_inner);
-        //System.out.println(firstProductPriceOnPage_span);
-    }
-
-    public void searchAndCheckPriceFirstProductOnPage() {
+    protected static void searchAndCheckPriceFirstProductOnPage() {
+        String firstProductOnPage = listDisplayProducts().get(0).getText();
+        String firstProductPriceOnPage = priceDisplayProducts().get(0).getText();
         inputSearchProduct().sendKeys(firstProductOnPage);
         searchProductButton().click();
         assertEquals(firstProductOnPage, $$(By.xpath("//article[@data-autotest-id='product-snippet']//span[@data-tid='ce80a508']")).get(0).getText());
