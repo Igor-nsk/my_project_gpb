@@ -65,14 +65,6 @@ public class MarketPage {
         return $$(By.xpath("//span[@data-autotest-currency='₽']/span"));
     }
 
-    //public String firstProductOnPage = listDisplayProducts().get(0).getText();
-    //public String firstProductPriceOnPage = priceDisplayProducts().get(0).getText();
-
-
-    //  public static ElementsCollection priceDisplayProducts_nonspan() {
-    //      return $$(By.xpath("//span[@data-autotest-currency='₽']"));
-    //  }
-
     public static SelenideElement minPrice() {
         return $(cssSelector("#glpricefrom"));
     }
