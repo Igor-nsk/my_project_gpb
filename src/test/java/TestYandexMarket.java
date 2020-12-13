@@ -2,7 +2,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 
 
-public class OneTest {
+public class TestYandexMarket {
 
 
     @Test
@@ -29,6 +29,7 @@ public class OneTest {
         MarketPage.setMaxPrice("25000");
         MarketPage.chooseApple();
         MarketPage.chooseHuawei();
+        MarketPage.checkPriceBetweenRange();
         Selenide.sleep(1000);
     }
 }
