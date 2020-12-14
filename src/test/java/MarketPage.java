@@ -1,10 +1,6 @@
 import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.openqa.selenium.By.cssSelector;
@@ -155,8 +151,8 @@ public class MarketPage {
         price().scrollTo();
     }
 
-    //Предположил, что стоимость выбранных товаров неоходимо собрать в список и с цикле проверить на >=20000 и <=25000
-    //возвращать true или false для проверке в assert
+    //Предполагаю, что стоимость выбранных товаров неоходимо было собрать в список, в цикле проверить на >=20000 и <=25000
+    // и возвращать true или false по итерации для проверки в assert
    /* public static void checkPriceBetweenRange() {
         List<SelenideElement> elements = $$(By.xpath("//span[@data-autotest-currency='₽']/span"));
         List<String> actualValues = new ArrayList<>();
