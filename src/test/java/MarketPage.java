@@ -1,6 +1,9 @@
 import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.openqa.selenium.By.cssSelector;
@@ -85,6 +88,8 @@ public class MarketPage {
         return $(By.xpath("//button[@type='submit']"));
     }
 
+    public static SelenideElement popularBrends() { return $(cssSelector("._3fgAD4rSaL"));}
+
     public static void choiceComputer() {
         computers().click();
     }
@@ -153,15 +158,18 @@ public class MarketPage {
 
     //Предполагаю, что стоимость выбранных товаров неоходимо было собрать в список, в цикле проверить на >=20000 и <=25000
     // и возвращать true или false по итерации для проверки в assert
-   /* public static void checkPriceBetweenRange() {
-        List<SelenideElement> elements = $$(By.xpath("//span[@data-autotest-currency='₽']/span"));
-        List<String> actualValues = new ArrayList<>();
-        String[] actualValuesArray = new String[elements.size()];
+    public static void checkPriceBetweenRange() {
+        //popularBrends().shouldBe(Condition.visible);
+        List<SelenideElement> elements = $$(By.xpath("//div[@data-zone-name='price']//span[@data-autotest-currency='₽']/*[1]"));
+              System.out.println(elements);
+        /*for (int i = 0; i<elements.size(); i++) {
+            String actualValues = elements.get(i).getText();
+            System.out.println(actualValues);
 
-        for (int i = 0; i < elements.size(); i++) {
+        }*/
+        /*for (int i = 0; i < actualValuesArray.length; i++) {
             actualValuesArray[i] = actualValues.get(i);
-            System.out.println(Arrays.toString(actualValuesArray));
+            System.out.println(actualValuesArray[i]);*/
     }
-    }*/
 
 }

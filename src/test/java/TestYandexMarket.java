@@ -29,6 +29,8 @@ public class TestYandexMarket {
         MarketPage.setMaxPrice("25000");
         MarketPage.chooseApple();
         MarketPage.chooseHuawei();
-        //MarketPage.checkPriceBetweenRange(); -- не реализовано.
+        Selenide.sleep(3000);
+        MarketPage.checkPriceBetweenRange();
+        Selenide.sleep(100);
     }
 }
