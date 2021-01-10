@@ -25,12 +25,11 @@ public class TestYandexMarket {
         MarketPage.choiceComputer();
         MarketPage.chooseTablet();
         MarketPage.scrollToPrice();
-        MarketPage.setMinPrice("20000");
-        MarketPage.setMaxPrice("25000");
         MarketPage.chooseApple();
         MarketPage.chooseHuawei();
+        MarketPage.setMinPrice("20000");
+        MarketPage.setMaxPrice("25000");
         Selenide.sleep(3000);
         MarketPage.checkPriceBetweenRange();
-        Selenide.sleep(100);
     }
 }

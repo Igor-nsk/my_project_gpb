@@ -156,20 +156,20 @@ public class MarketPage {
         price().scrollTo();
     }
 
-    //Предполагаю, что стоимость выбранных товаров неоходимо было собрать в список, в цикле проверить на >=20000 и <=25000
-    // и возвращать true или false по итерации для проверки в assert
     public static void checkPriceBetweenRange() {
-        //popularBrends().shouldBe(Condition.visible);
         List<SelenideElement> elements = $$(By.xpath("//div[@data-zone-name='price']//span[@data-autotest-currency='₽']/*[1]"));
-              System.out.println(elements);
-        /*for (int i = 0; i<elements.size(); i++) {
-            String actualValues = elements.get(i).getText();
-            System.out.println(actualValues);
-
-        }*/
-        /*for (int i = 0; i < actualValuesArray.length; i++) {
-            actualValuesArray[i] = actualValues.get(i);
-            System.out.println(actualValuesArray[i]);*/
+        List<String> actualValues = new ArrayList<>();
+        int count = elements.size();
+        System.out.println(count);
+        for (int i=0;i<count;i++) {
+            actualValues.add(i,elements.get(i).getText().replaceAll("\\s",""));
+            //System.out.println(actualValues);
+             }
+        List<Integer> actValuesInt = new ArrayList<>(actualValues.size());
+        for (String  s: actualValues) {
+            actValuesInt.add(Integer.valueOf(s));
+            //System.out.println(actValuesInt);
+        }
     }
 
 }
